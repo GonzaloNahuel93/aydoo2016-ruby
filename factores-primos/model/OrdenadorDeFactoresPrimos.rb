@@ -2,11 +2,10 @@ class OrdenadorDeFactoresPrimos
 
 	def ordenar(factoresPrimos, criterioDeOrden)
 
+		factoresPrimos.sort!
+
 		if criterioDeOrden == "--sort:des"
-
-			factoresPrimos.sort!
-			factoresPrimos.reverse!
-
+		   factoresPrimos.reverse!
 		end
 
 		return factoresPrimos
