@@ -2,6 +2,7 @@ class FactoresPrimos
 
   def factorizar(numero)
     
+    #El Array que tendra los factores primos, al principio estara vacio.
     factoresPrimos = []
     
     n = 2
