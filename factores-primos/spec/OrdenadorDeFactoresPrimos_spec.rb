@@ -23,4 +23,9 @@ describe OrdenadorDeFactoresPrimos do
   	expect(ordenadorDeFactoresPrimos.ordenar([3,4,5,1,2], "--sort:des")).to eq [5,4,3,2,1]
   end
 
+  it 'Que devuelva [-1,0,1] cuando se pide ordenar [1,-1,0] de manera ASCENDENTE' do
+  	ordenadorDeFactoresPrimos = OrdenadorDeFactoresPrimos.new
+  	expect(ordenadorDeFactoresPrimos.ordenar([1,-1,0], "--sort:asc")).to eq [-1,0,1]
+  end
+
 end
