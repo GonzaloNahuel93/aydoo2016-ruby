@@ -13,4 +13,9 @@ describe FactoresPrimos do
     expect(factoresPrimos.factorizar(10)).to eq [2,5]
   end
 
+  it 'Que tire [2,2,5,5] cuando se pide factorizar 100' do
+  	factoresPrimos = FactoresPrimos.new
+  	expect(factoresPrimos.factorizar(100)).to eq [2,2,5,5]
+  end
+
 end
