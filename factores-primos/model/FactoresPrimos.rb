@@ -10,7 +10,7 @@ class FactoresPrimos
 
         parametros = arrayDeInformacion
 
-        numeroAFactorizar = parametros[0]
+        numeroAFactorizar = parametros[0].to_i
         factoresPrimosDelNumero = factorizar(numeroAFactorizar)
 
         #Aca ya queda un array multidimensional ==> POSICION 0: Esta el array de factores primos del numero, POSICION 1: Esta el array de parametros
