@@ -1,7 +1,21 @@
+require_relative '../model/FactoresPrimos'
+
 class OrdenadorDeParametros
 
 	def initialize
 		@arrayDeParametrosOrdenados = []
+		@factoresPrimos = FactoresPrimos.new
+	end
+
+	def realizarOperacion(arrayDeInformacion)
+
+		arrayDeInformacion = ordenar(arrayDeInformacion)
+		@factoresPrimos.realizarOperacion(arrayDeInformacion)
+
+	end
+
+	def getSucesor
+		return @factoresPrimos
 	end
 
 	def ordenar(arrayDeParametros)

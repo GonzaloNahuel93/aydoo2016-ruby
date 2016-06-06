@@ -1,5 +1,19 @@
 class GeneradorDeSalida
 
+    def realizarOperacion(arrayDeInformacion)
+
+        factoresPrimos = arrayDeInformacion[0]
+        caracteristicoDelFormato = arrayDeInformacion[1][1]
+        salida = arrayDeInformacion[1][3]
+
+        getSalida(factoresPrimos, caracteristicoDelFormato, salida)
+
+    end
+
+    def getSucesor
+        return nil
+    end
+
 	def getSalida(factoresPrimos, formato, salida)
 
 		if salida != ""

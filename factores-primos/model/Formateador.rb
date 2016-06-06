@@ -1,4 +1,25 @@
+require_relative '../model/GeneradorDeSalida'
+
 class Formateador
+
+	def initialize
+        @generadorDeSalida = GeneradorDeSalida.new
+    end
+
+    def realizarOperacion(arrayDeInformacion)
+
+        formato = arrayDeInformacion[1][1]
+        caracteristicoDelFormato = determinarCaracteristicoDelFormato(formato)
+
+        arrayDeInformacion[1][1] = caracteristicoDelFormato
+
+        @generadorDeSalida.realizarOperacion(arrayDeInformacion)
+
+    end
+
+    def getSucesor
+        return @generadorDeSalida
+    end
 
 	def determinarCaracteristicoDelFormato(formato)
 
