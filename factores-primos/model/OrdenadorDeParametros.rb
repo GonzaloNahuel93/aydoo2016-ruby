@@ -75,7 +75,7 @@ class OrdenadorDeParametros
 	def agregarNombreDeArchivoDeSalida(parametro, arrayDeParametrosOrdenados)
 
 		archivoDeSalida = /--output-file=/
-		hayArchivoDeSalida = archivoDeSalida.match(parametro)
+		hayArchivoDeSalida = archivoDeSalida.match(parametro.downcase)
 
 		txt = /.txt/
 		esTxt = txt.match(parametro)
@@ -91,17 +91,16 @@ class OrdenadorDeParametros
 
 	end
 
+	#Metodo privado agregarDatosFaltantes
 	private
 	def agregarDatosFaltantes(arrayDeParametrosOrdenados)
 
 		if arrayDeParametrosOrdenados[1] == ""
+		   arrayDeParametrosOrdenados[1] = "--format=pretty"
+		end
 
-			arrayDeParametrosOrdenados[1] = "--format=pretty"
-
-		elsif arrayDeParametrosOrdenados[2] == ""
-
-			arrayDeParametrosOrdenados[2] = "--sort:asc"
-
+		if arrayDeParametrosOrdenados[2] == ""
+		   arrayDeParametrosOrdenados[2] = "--sort:asc"
 		end
 
 	end
