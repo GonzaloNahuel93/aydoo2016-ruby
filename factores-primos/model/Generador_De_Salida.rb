@@ -21,7 +21,7 @@ class Generador_De_Salida < Unidad_De_Proceso
 		if salida != ""
 
 			generar_archivo(factores_primos, formato, salida)
-			puts "- Archivo creado con exito!"
+			puts "- ¡Archivo creado con exito!"
 
 		else
 
