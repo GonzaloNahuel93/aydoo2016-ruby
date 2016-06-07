@@ -1,6 +1,7 @@
+require_relative '../model/Unidad_De_Proceso'
 require_relative '../model/Validador_De_Parametros'
 
-class Ordenador_De_Parametros
+class Ordenador_De_Parametros < Unidad_De_Proceso
 
 	def initialize
 		@array_de_parametros_ordenados = []

@@ -1,4 +1,6 @@
-class Generador_De_Salida
+require_relative '../model/Unidad_De_Proceso'
+
+class Generador_De_Salida < Unidad_De_Proceso
 
     def realizar_operacion(array_de_informacion)
 
@@ -51,7 +53,7 @@ class Generador_De_Salida
 			print "#{factores_primos[i]}#{formato}"
 		end
 
-		puts
+		puts " "
 
 	end
 

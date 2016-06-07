@@ -1,6 +1,7 @@
+require_relative '../model/Unidad_De_Proceso'
 require_relative '../model/Factores_Primos'
 
-class Validador_De_Parametros
+class Validador_De_Parametros < Unidad_De_Proceso
 
 	def initialize
 		@factores_primos = Factores_Primos.new

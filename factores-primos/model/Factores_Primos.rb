@@ -1,6 +1,7 @@
+require_relative '../model/Unidad_De_Proceso'
 require_relative '../model/Ordenador_De_Factores_Primos'
 
-class Factores_Primos
+class Factores_Primos < Unidad_De_Proceso
 
     def initialize
         @ordenador_de_factores_primos = Ordenador_De_Factores_Primos.new

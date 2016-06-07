@@ -1,6 +1,7 @@
+require_relative '../model/Unidad_De_Proceso'
 require_relative '../model/Generador_De_Salida'
 
-class Formateador
+class Formateador < Unidad_De_Proceso
 
 	def initialize
         @generador_de_salida = Generador_De_Salida.new

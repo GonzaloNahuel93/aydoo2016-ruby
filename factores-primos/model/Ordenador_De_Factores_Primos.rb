@@ -1,6 +1,7 @@
+require_relative '../model/Unidad_De_Proceso'
 require_relative '../model/Formateador'
 
-class Ordenador_De_Factores_Primos
+class Ordenador_De_Factores_Primos < Unidad_De_Proceso
 
 	def initialize
         @formateador = Formateador.new
