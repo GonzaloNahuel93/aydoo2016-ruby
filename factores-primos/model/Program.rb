@@ -1,6 +1,6 @@
-require_relative '../model/OrdenadorDeParametros'
+require_relative '../model/Ordenador_De_Parametros'
 
 parametros = ARGV
 
-ordenadorDeParametros = OrdenadorDeParametros.new
-ordenadorDeParametros.realizarOperacion(parametros)
+ordenador_de_parametros = Ordenador_De_Parametros.new
+ordenador_de_parametros.realizar_operacion(parametros)

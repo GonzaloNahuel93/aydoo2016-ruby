@@ -1,43 +1,43 @@
-require_relative '../model/GeneradorDeSalida'
+require_relative '../model/Generador_De_Salida'
 
 class Formateador
 
 	def initialize
-        @generadorDeSalida = GeneradorDeSalida.new
+        @generador_de_salida = Generador_De_Salida.new
     end
 
-    def realizarOperacion(arrayDeInformacion)
+    def realizar_operacion(array_de_informacion)
 
-        formato = arrayDeInformacion[1][1]
-        caracteristicoDelFormato = determinarCaracteristicoDelFormato(formato)
+        formato = array_de_informacion[1][1]
+        caracteristico_del_formato = determinar_caracteristico_del_formato(formato)
 
-        arrayDeInformacion[1][1] = caracteristicoDelFormato
+        array_de_informacion[1][1] = caracteristico_del_formato
 
-        @generadorDeSalida.realizarOperacion(arrayDeInformacion)
+        @generador_de_salida.realizar_operacion(array_de_informacion)
 
     end
 
-    def getSucesor
-        return @generadorDeSalida
+    def get_sucesor
+        return @generador_de_salida
     end
 
-	def determinarCaracteristicoDelFormato(formato)
+	def determinar_caracteristico_del_formato(formato)
 
-		caracteristicoDelFormato = nil
+		caracteristico_del_formato = nil
 
 		if formato == "--format=pretty"
 
 			#El caracteristico del formato 'pretty' es el espacio.
-			caracteristicoDelFormato = " "
+			caracteristico_del_formato = " "
 
 		else
 
 			#El caracteristico del formato 'quiet' es el salto de linea.
-			caracteristicoDelFormato = "\n"
+			caracteristico_del_formato = "\n"
 
 		end
 
-		return caracteristicoDelFormato
+		return caracteristico_del_formato
 
 	end
 
