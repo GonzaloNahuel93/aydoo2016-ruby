@@ -23,9 +23,9 @@ describe Ordenador_De_Parametros do
   	expect(ordenador_de_parametros.ordenar(["1","--output-file=archivo.txt"])).to eq ["1","--format=pretty","--sort:asc","archivo.txt"]
   end
 
-  it 'Que devuelva los parametros ordenados con los formatos y ordenamientos por default cuando se colocan formatos y ordenamientos invalidos' do
+  it 'Que devuelva los parametros ordenados con los formatos y ordenamientos, aunque estos sean invalidos' do
   	ordenador_de_parametros = Ordenador_De_Parametros.new
-  	expect(ordenador_de_parametros.ordenar(["1","--format=arcoiris","--output-file=factoresPrimos.txt","--sort:unicornio"])).to eq ["1","--format=pretty","--sort:asc","factoresPrimos.txt"]
+  	expect(ordenador_de_parametros.ordenar(["1","--format=arcoiris","--output-file=factoresPrimos.txt","--sort:unicornio"])).to eq ["1","--format=arcoiris","--sort:unicornio","factoresPrimos.txt"]
   end
 
 end

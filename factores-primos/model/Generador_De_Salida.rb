@@ -19,6 +19,7 @@ class Generador_De_Salida
 		if salida != ""
 
 			generar_archivo(factores_primos, formato, salida)
+			puts "- Archivo creado con exito!"
 
 		else
 

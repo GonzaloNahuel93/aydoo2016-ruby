@@ -1,19 +1,19 @@
-require_relative '../model/Factores_Primos'
+require_relative '../model/Validador_De_Parametros'
 
 class Ordenador_De_Parametros
 
 	def initialize
 		@array_de_parametros_ordenados = []
-		@factores_primos = Factores_Primos.new
+		@validador_de_parametros = Validador_De_Parametros.new
 	end
 
 	def realizar_operacion(array_de_informacion)
 		array_de_informacion = ordenar(array_de_informacion)
-		@factores_primos.realizar_operacion(array_de_informacion)
+		@validador_de_parametros.realizar_operacion(array_de_informacion)
 	end
 
 	def get_sucesor
-		return @factores_primos
+		return @validador_de_parametros
 	end
 
 	def ordenar(array_de_parametros)
@@ -50,13 +50,10 @@ class Ordenador_De_Parametros
 	private
 	def agregar_formato(parametro, array_de_parametros_ordenados)
 
-		hay_pretty = /--format=pretty/.match(parametro)
-		hay_quiet = /--format=quiet/.match(parametro)
+		hay_formato = /--format=/.match(parametro)
 
-		if hay_pretty
-		   array_de_parametros_ordenados[1] = hay_pretty[0]
-		elsif hay_quiet
-		   array_de_parametros_ordenados[1] = hay_quiet[0]
+		if hay_formato
+		   array_de_parametros_ordenados[1] = parametro
 		end
 
 	end
@@ -65,13 +62,10 @@ class Ordenador_De_Parametros
 	private
 	def agregar_ordenamiento(parametro, array_de_parametros_ordenados)
 
-		hay_asc = /--sort:asc/.match(parametro)
-		hay_des = /--sort:des/.match(parametro)
+		hay_ordenamiento = /--sort:/.match(parametro)
 
-		if hay_asc
-		   array_de_parametros_ordenados[2] = hay_asc[0]
-		elsif hay_des
-		   array_de_parametros_ordenados[2] = hay_des[0]
+		if hay_ordenamiento
+		   array_de_parametros_ordenados[2] = parametro
 		end
 
 	end
@@ -81,9 +75,8 @@ class Ordenador_De_Parametros
 	def agregar_nombre_de_archivo_de_salida(parametro, array_de_parametros_ordenados)
 
 		hay_archivo_de_salida = /--output-file=/.match(parametro.downcase)
-		es_txt = /.txt/.match(parametro)
 
-		if hay_archivo_de_salida && es_txt
+		if hay_archivo_de_salida
 
 			descomposicion_del_parametro = parametro.split("=")
 			nombre_del_archivo = descomposicion_del_parametro[1]
